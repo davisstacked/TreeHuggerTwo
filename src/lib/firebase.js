@@ -2,7 +2,7 @@ import Firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-import { seedDatabase } from '../seed';
+// import { seedDatabase } from '../seed';
 
 // connect to database
 const config = {
@@ -19,6 +19,6 @@ const firebase = Firebase.initializeApp(config);
 const { FieldValue } = Firebase.firestore;
 
 // only call seed file once 
-seedDatabase(firebase);
+// seedDatabase(firebase);
 
 export { firebase, FieldValue };
