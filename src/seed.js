@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-// NOTE: replace 'NvPY9M9MzFTARQ6M816YAzDJxZ72' with your Firebase auth user id (can be taken from Firebase)
+// NOTE: replace userId with your Firebase auth user id (can be taken from Firebase)
 export function seedDatabase(firebase) {
   const users = [
     {
@@ -13,9 +13,9 @@ export function seedDatabase(firebase) {
     },
     {
       userId: '2',
-      username: 'Steve Robinson',
-      fullName: 'Steve Robinson',
-      emailAddress: 'steverobinson@gmail.com',
+      username: 'TheKMan',
+      fullName: 'Gustav Klimt',
+      emailAddress: 'theKman@gmail.com',
       following: ['gzTUpKWQIBNy3HGEB6zdYIWHzCm2'],
       followers: ['gzTUpKWQIBNy3HGEB6zdYIWHzCm2'],
       dateCreated: Date.now()
