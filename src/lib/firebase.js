@@ -3,7 +3,15 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 // connect to database
-const config = {};
+const config = {
+  apiKey: "AIzaSyAZYDBAYWUVWot7zmg1COLbI1V0v4Kiod0",
+  authDomain: "treehugger2.firebaseapp.com",
+  projectId: "treehugger2",
+  storageBucket: "treehugger2.appspot.com",
+  messagingSenderId: "1096887950682",
+  appId: "1:1096887950682:web:b871610e02da4df3876763",
+  measurementId: "G-XGBTTKD9DS"
+};
 
 const firebase = Firebase.initializeApp(config);
 const { FieldValue } = Firebase.firestore;
