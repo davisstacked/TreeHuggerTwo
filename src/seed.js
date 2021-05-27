@@ -3,21 +3,21 @@
 export function seedDatabase(firebase) {
   const users = [
     {
-      userId: 'NvPY9M9MzFTARQ6M816YAzDJxZ72',
-      username: 'karl',
-      fullName: 'Karl Hadwen',
-      emailAddress: 'karlhadwen@gmail.com',
+      userId: 'gzTUpKWQIBNy3HGEB6zdYIWHzCm2',
+      username: 'leeleedaadaa',
+      fullName: 'Leah Davis',
+      emailAddress: 'leahdavis25624@gmail.com',
       following: ['2'],
       followers: ['2', '3', '4'],
       dateCreated: Date.now()
     },
     {
       userId: '2',
-      username: 'raphael',
-      fullName: 'Raffaello Sanzio da Urbino',
-      emailAddress: 'raphael@sanzio.com',
-      following: [],
-      followers: ['NvPY9M9MzFTARQ6M816YAzDJxZ72'],
+      username: 'Steve Robinson',
+      fullName: 'Steve Robinson',
+      emailAddress: 'steverobinson@gmail.com',
+      following: ['gzTUpKWQIBNy3HGEB6zdYIWHzCm2'],
+      followers: ['gzTUpKWQIBNy3HGEB6zdYIWHzCm2'],
       dateCreated: Date.now()
     },
     {
@@ -26,7 +26,7 @@ export function seedDatabase(firebase) {
       fullName: 'Salvador Dalí',
       emailAddress: 'salvador@dali.com',
       following: [],
-      followers: ['NvPY9M9MzFTARQ6M816YAzDJxZ72'],
+      followers: ['gzTUpKWQIBNy3HGEB6zdYIWHzCm2'],
       dateCreated: Date.now()
     },
     {
@@ -35,7 +35,7 @@ export function seedDatabase(firebase) {
       fullName: 'George Orwell',
       emailAddress: 'george@orwell.com',
       following: [],
-      followers: ['NvPY9M9MzFTARQ6M816YAzDJxZ72'],
+      followers: ['gzTUpKWQIBNy3HGEB6zdYIWHzCm2'],
       dateCreated: Date.now()
     }
   ];
@@ -53,7 +53,7 @@ export function seedDatabase(firebase) {
       .add({
         photoId: i,
         userId: '2',
-        imageSrc: `/images/users/raphael/${i}.jpg`,
+        imageSrc: `/images/users/klimt/${i}.jpeg`,
         caption: 'Saint George and the Dragon',
         likes: [],
         comments: [
@@ -72,3 +72,15 @@ export function seedDatabase(firebase) {
       });
   }
 }
+
+// update firebase to this for production under rules of our database
+// production rules
+// rules_version = '2';
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//     match /{document=**} {
+//       allow read:
+//       allow write: if request.auth.uid != null;
+//     }
+//   }
+// }
