@@ -23,6 +23,7 @@ module.exports = {
         'tan-700': '#49361d',
         'tan-800': '#251b0e',
         'tan-900': '#120d07',
+        'pink-alert': '#d1154d'
       }
     },
   },

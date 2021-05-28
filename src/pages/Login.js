@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import FirebaseContext from '../context/firebase';
+import * as ROUTES from '../constants/routes'
 
 const Login = () => {
   const history = useHistory();
@@ -12,7 +13,18 @@ const Login = () => {
   const [error, setError] = useState('');
   const isInvalid = password === '' || emailAddress === '';
 
-  const handleLogin = () => { };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
+      history.push(ROUTES.DASHBOARD);
+    }
+    catch (error) {
+      setEmailAddress('');
+      setPassword('');
+      setError(error.message);
+    }
+  };
 
   useEffect(() => {
     document.title = 'Login - Tree Hugger';
@@ -35,17 +47,17 @@ const Login = () => {
               src="/images/logo.png"
               alt="TreeHugger Logo" />
           </h1>
-          {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
+          {error && <p className="mb-4 text-xs text-pink-alert">{error}</p>}
           <form onSubmit={handleLogin} method="POST">
             <input
-              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-green-200 rounded mb-2"
+              className="text-sm text-green-900 w-full mr-3 py-5 px-4 h-2 border border-green-200 rounded mb-2"
               aria-label="Enter your email address"
               type="text"
               placeholder="Email address"
               onChange={({target}) => setEmailAddress(target.value)}
             />
             <input
-              className="text-sm text-gray-base w-full mr-3 py-5 px-4 h-2 border border-green-200 rounded mb-2"
+              className="text-sm text-green-800 w-full mr-3 py-5 px-4 h-2 border border-green-200 active:border-green-700 rounded mb-2"
               aria-label="Enter your password"
               type="password"
               placeholder="Password"
