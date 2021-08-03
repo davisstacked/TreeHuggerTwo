@@ -1,3 +1,6 @@
+challenges.
+downloading tailwind. how it was challenging. 
+
 code I like:
 
 Login: 
@@ -15,3 +18,8 @@ Login:
       console.log(error.message)
     }
   };
+
+app.js
+used Lazy loading to cut down on runtime.
+  const Login = lazy(() => import('./pages/Login'));
+const SignUp = lazy(() => import('./pages/SignUp'));
