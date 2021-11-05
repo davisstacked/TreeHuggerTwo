@@ -25,7 +25,7 @@ export async function getUserByUsername(username) {
 }
 
 // Get User from the firestore where userID === userID (passed from the auth)
-export async function getUserById(userId) {
+export async function getUserByUserId(userId) {
   const result = await firebase
     .firestore()
     .collection('users')
